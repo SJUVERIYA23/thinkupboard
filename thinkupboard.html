@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ThinkUpBoard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1e2f;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2em;
+      color: #00d1b2;
+    }
+    select, textarea {
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      width: 300px;
+    }
+    textarea {
+      height: 100px;
+      margin-top: 10px;
+    }
+    .creator {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 ThinkUpBoard</h1>
+  <label for="mood">What's your mood?</label>
+  <select id="mood" onchange="showMessage()">
+    <option value="">-- Select Mood --</option>
+    <option value="angry">😠 Angry</option>
+    <option value="bored">😐 Bored</option>
+    <option value="happy">😄 Happy</option>
+  </select>
+
+  <textarea id="message" readonly placeholder="Your mind's message appears here..."></textarea>
+
+  <div class="creator">✨ Created by YOU — Future CEO</div>
+
+  <script>
+    function showMessage() {
+      const mood = document.getElementById("mood").value;
+      const messageBox = document.getElementById("message");
+
+      let message = "";
+      if (mood === "angry") {
+        message = "Wanna listen to peaceful music to calm down?";
+      } else if (mood === "bored") {
+        message = "Let’s do something crazy... or I can suggest something fun!";
+      } else if (mood === "happy") {
+        message = "Life’s great! Wanna share some happiness?";
+      }
+
+      messageBox.value = message;
+    }
+  </script>
+</body>
+</html>
